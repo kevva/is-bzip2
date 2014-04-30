@@ -11,7 +11,7 @@ describe('isBzip()', function () {
         return isBzip(fs.readFileSync(file));
     }
 
-    it('should detect TAR from buffer', function (cb) {
+    it('should detect BZIP from buffer', function (cb) {
         assert(check(path.join(__dirname, 'fixtures/test.bz2')));
         cb();
     });
