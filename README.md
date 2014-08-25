@@ -4,29 +4,20 @@
 
 ## Install
 
-```bash
+```sh
 $ npm install --save is-bzip2
-```
-
-```bash
-$ component install kevva/is-bzip2
-```
-
-```bash
-$ bower install --save is-bzip2
 ```
 
 ## Usage
 
 ```js
-var fs = require('fs');
-var isBzip = require('is-bzip2');
-var buf = fs.readFileSync('foo.bz2');
+var isBzip2 = require('is-bzip2');
+var read = require('fs').readFileSync;
 
-isBzip(buf);
+isBzip2(read('foo.bz2'));
 // => true
 ```
 
 ## License
 
-MIT © [Kevin Mårtensson](https://github.com/kevva)
+[MIT License](http://en.wikipedia.org/wiki/MIT_License) © [Kevin Mårtensson](https://github.com/kevva)
