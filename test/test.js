@@ -1,18 +1,15 @@
-/*global describe, it */
 'use strict';
 
-var assert = require('assert');
-var fs = require('fs');
-var isBzip = require('../');
+var isBzip2 = require('../');
 var path = require('path');
+var readChunk = require('read-chunk');
+var test = require('ava');
 
-describe('isBzip()', function () {
-    function check(file) {
-        return isBzip(fs.readFileSync(file));
-    }
+test('should detect BZIP2 from buffer', function (t) {
+    t.plan(2);
 
-    it('should detect BZIP from buffer', function (cb) {
-        assert(check(path.join(__dirname, 'fixtures/test.bz2')));
-        cb();
+    readChunk(path.join(__dirname, 'fixtures/test.bz2'), 0, 4, function (err, buf) {
+        t.assert(!err);
+        t.assert(isBzip2(buf));
     });
 });
