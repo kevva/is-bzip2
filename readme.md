@@ -13,8 +13,8 @@ $ npm install --save is-bzip2
 ## Usage
 
 ```
-var isBzip2 = require('is-bzip2');
 var read = require('fs').readFileSync;
+var isBzip2 = require('is-bzip2');
 
 isBzip2(read('foo.bz2'));
 //=> true

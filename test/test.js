@@ -1,9 +1,9 @@
 'use strict';
 
-var isBzip2 = require('../');
 var path = require('path');
 var readChunk = require('read-chunk');
 var test = require('ava');
+var isBzip2 = require('../');
 
 test('should detect BZIP2 from buffer', function (t) {
 	t.plan(2);
